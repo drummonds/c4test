@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>c4test &mdash; C4 Diagram Demo</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; background: #fafafa; max-width: 960px; }
+  h1 { margin-bottom: 0.3rem; }
+  h2 { margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; }
+  .subtitle { color: #666; margin-bottom: 2rem; }
+  nav { margin: 1.5rem 0; }
+  nav a { display: inline-block; background: #0366d6; color: #fff; text-decoration: none;
+          padding: 0.5rem 1rem; border-radius: 4px; margin-right: 0.5rem; }
+  nav a:hover { background: #024fa2; }
+  .demo { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1rem 0; }
+  .demo svg { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+
+<h1>c4test</h1>
+<p class="subtitle">Evaluating native Go rendering of C4 diagrams with Mermaid syntax</p>
+
+<nav>
+  <a href="comparison.html">mmdg vs mermaid.js comparison</a>
+  <a href="ecosystem.html">Mermaid ecosystem &amp; history</a>
+</nav>
+
+<h2>What is this?</h2>
+<p>
+  <a href="https://c4model.com">C4 model</a> diagrams describe software architecture at
+  multiple levels of abstraction. <a href="https://mermaid.js.org">Mermaid</a> supports C4
+  syntax, but the new pure-Go renderer
+  (<a href="https://github.com/bvolpato/mermaid-go-renderer">mmdg</a>) is still maturing.
+  This project compares mmdg output against the reference mermaid.js renderer.
+</p>
+
+<h2>C4 System Context</h2>
+<div class="demo">
+  <pre class="mermaid">
+C4Context
+    title Model Bank - System Context
+
+    Person(customer, "Bank Customer", "A customer of the model bank")
+    System(modelBank, "Model Bank", "Simulates core banking: accounts, interest, payments")
+    System_Ext(fps, "Faster Payments", "UK Faster Payments Service (mock-fps)")
+
+    Rel(customer, modelBank, "Views accounts, sends payments")
+    Rel(modelBank, fps, "Sends/receives payments")
+  </pre>
+</div>
+
+<h2>C4 Container</h2>
+<div class="demo">
+  <pre class="mermaid">
+C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, "Bank Customer")
+
+    System_Boundary(bank, "Model Bank") {
+        Container(web, "Web UI", "Go WASM + Bulma", "Browser-based dashboard")
+        Container(server, "Server", "Go + lofigui", "HTTP server with SSR")
+        Container(sim, "Simulation Engine", "Go", "Account lifecycle, interest accrual")
+        Container(payments, "Payment Sim", "Go", "Payment generation and processing")
+        ContainerDb(ledger, "Ledger", "go-luca", "Double-entry accounting")
+    }
+
+    System_Ext(fps, "mock-fps", "FPS simulator")
+
+    Rel(customer, web, "Uses", "HTTPS")
+    Rel(customer, server, "Uses", "HTTPS")
+    Rel(web, sim, "Calls", "WASM")
+    Rel(server, sim, "Calls", "Go API")
+    Rel(sim, ledger, "Records transactions")
+    Rel(payments, fps, "Sends payments", "HTTP")
+    Rel(payments, ledger, "Records movements")
+  </pre>
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+</script>
+
+</body>
+</html>

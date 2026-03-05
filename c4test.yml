@@ -1,0 +1,14 @@
+title: "C4 Diagram Comparison: mmdg branches vs mermaid.js"
+commentary: >
+  Comparing the main mmdg build against development branches
+  of mermaid-go-renderer to track rendering improvements.
+
+main_path: ~/go/bin/mmdg
+
+branches:
+  - name: c4-title-centering
+    path: ~/nibble/mermaid-go-renderer/branch-builds/c4-title-centering/mmdg
+    description: Fixes title centering in C4 diagrams
+  - name: c4-container-work
+    path: ~/nibble/mermaid-go-renderer/branch-builds/c4-container-work/mmdg
+    description: Container layout improvements

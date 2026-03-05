@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mermaid Ecosystem: History &amp; Native Ports</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; background: #fafafa; max-width: 960px; }
+  h1 { margin-bottom: 0.5rem; }
+  h2 { margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: 0.5rem 0.75rem; text-align: left; }
+  th { background: #f0f0f0; }
+  a { color: #0366d6; }
+  .tree { font-family: monospace; font-size: 0.95rem; line-height: 1.6; background: #fff;
+          border: 1px solid #ddd; border-radius: 4px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .note { background: #fffbe6; border: 1px solid #e6d84c; border-radius: 4px; padding: 0.75rem 1rem;
+          font-size: 0.9rem; margin: 1rem 0; }
+  .date { color: #666; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<h1>Mermaid Ecosystem</h1>
+<p>History of the Mermaid diagram language and its native (non-browser) ports.</p>
+
+<h2>Timeline</h2>
+<table>
+  <tr><th>Date</th><th>Event</th><th>Stars</th></tr>
+  <tr><td>Nov 2014</td><td><strong>mermaid.js</strong> created by Knut Sveidqvist &mdash; JS library rendering text-based diagrams in the browser</td><td>86k</td></tr>
+  <tr><td>2019</td><td><strong>mermaid-cli</strong> (<code>mmdc</code>) released &mdash; wraps mermaid.js via Puppeteer/Chromium for CLI rendering</td><td>4.2k</td></tr>
+  <tr><td>Feb 2022</td><td>GitHub adds native Mermaid rendering in Markdown files</td><td></td></tr>
+  <tr><td>2022</td><td>Mermaid Chart Inc. founded by Sveidqvist (commercial hosted editor)</td><td></td></tr>
+  <tr><td>Oct 2023</td><td><strong><a href="https://github.com/TyphonHill/go-mermaid">go-mermaid</a></strong> by TyphonHill &mdash; Go API for generating Mermaid diagram text programmatically (not a renderer)</td><td>40</td></tr>
+  <tr><td>Jan 2026</td><td><strong>mermaid-rs-renderer</strong> (<code>mmdr</code>) &mdash; first pure native Mermaid renderer, in Rust, by 1jehuang</td><td>1k</td></tr>
+  <tr><td>Feb 2026</td><td><strong>merman</strong> &mdash; independent Rust re-implementation by Latias94 (early stage)</td><td>1</td></tr>
+  <tr><td>Feb 2026</td><td><strong>mermaid-go-renderer</strong> (<code>mmdg</code>) &mdash; Go port of the Rust renderer, by bvolpato</td><td>1</td></tr>
+  <tr><td>Feb 2026</td><td><strong>drummonds/mermaid-go-renderer</strong> &mdash; fork of bvolpato's Go port</td><td>0</td></tr>
+</table>
+
+<h2>Lineage</h2>
+<div class="tree">
+mermaid.js (JS, 2014, Sveidqvist) &mdash; 86k stars
+&nbsp;&nbsp;&nbsp;&nbsp;The original. Browser-based renderer.
+<br>
+├── mmdc / mermaid-cli (JS+Puppeteer, 2019)
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLI wrapper: spawns headless Chrome to render.
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slow (~1-3s per diagram), needs Chromium installed.
+│
+├── go-mermaid (Go, Oct 2023, TyphonHill) &mdash; 40 stars
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go API to generate Mermaid text (not a renderer).
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Useful for building diagrams programmatically.
+│
+├── mmdr / mermaid-rs-renderer (Rust, Jan 2026, 1jehuang) &mdash; 1k stars
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First pure native re-implementation. No browser.
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100-1400x faster than mmdc. 23 diagram types incl. C4.
+│
+├── merman (Rust, Feb 2026, Latias94)
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Independent Rust re-implementation (early/separate effort).
+│
+└── mmdg / mermaid-go-renderer (Go, Feb 2026, bvolpato)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go port, inspired by the Rust renderer. ~158x faster than mmdc.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23 diagram types incl. C4.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── drummonds/mermaid-go-renderer (Go, Feb 2026)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fork for C4 layout improvements.
+</div>
+
+<h2>Comparison</h2>
+<table>
+  <tr>
+    <th>Tool</th><th>Language</th><th>Rendering</th><th>C4 Support</th><th>Speed vs mmdc</th><th>Status</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/mermaid-js/mermaid">mermaid.js</a></td>
+    <td>JavaScript</td><td>Browser / DOM</td><td>Yes (reference)</td><td>n/a (client-side)</td><td>Active, 86k stars</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/mermaid-js/mermaid-cli">mmdc</a></td>
+    <td>JS + Puppeteer</td><td>Headless Chrome</td><td>Yes</td><td>1x (baseline)</td><td>Active</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/1jehuang/mermaid-rs-renderer">mmdr</a></td>
+    <td>Rust</td><td>Native SVG</td><td>Yes</td><td>100-1400x</td><td>Active, 1k stars</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Latias94/merman">merman</a></td>
+    <td>Rust</td><td>Native SVG</td><td>Unknown</td><td>Unknown</td><td>Early stage</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/bvolpato/mermaid-go-renderer">mmdg</a></td>
+    <td>Go</td><td>Native SVG</td><td>Yes</td><td>~158x</td><td>New (Feb 2026)</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/drummonds/mermaid-go-renderer">mmdg (fork)</a></td>
+    <td>Go</td><td>Native SVG</td><td>Yes (improving)</td><td>~158x</td><td>Fork</td>
+  </tr>
+</table>
+
+<div class="note">
+  <strong>Note:</strong> The Go and Rust native renderers are all very new (early 2026). C4 layout quality
+  in the native renderers lags behind mermaid.js — this project (<a href="comparison.html">c4test</a>)
+  exists to compare the output side-by-side.
+</div>
+
+<h2>Other Go Mermaid Projects (not renderers)</h2>
+<p>These generate Mermaid <em>text</em> or wrap the JS renderer — they don't parse/render natively:</p>
+<table>
+  <tr><th>Project</th><th>What it does</th></tr>
+  <tr>
+    <td><a href="https://github.com/TyphonHill/go-mermaid">go-mermaid</a></td>
+    <td>Go API to generate Mermaid diagram text</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/dreampuf/mermaid.go">mermaid.go</a></td>
+    <td>Wraps mermaid.js via chromedp (needs Chrome)</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/anz-bank/mermaid-go">anz-bank/mermaid-go</a></td>
+    <td>Wraps mermaid.js via chromedp</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/abhinav/goldmark-mermaid">goldmark-mermaid</a></td>
+    <td>Goldmark Markdown extension; calls mmdc for server-side rendering</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Heiko-san/mermaidgen">mermaidgen</a></td>
+    <td>OOP Go API to generate Mermaid text</td>
+  </tr>
+</table>
+
+<p><a href="index.html">&larr; Home</a> | <a href="comparison.html">Diagram comparison</a></p>
+
+</body>
+</html>

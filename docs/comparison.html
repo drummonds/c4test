@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C4 Diagram Comparison: mmdg vs mermaid.js</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; background: #fafafa; }
+  h1 { margin-bottom: 1.5rem; }
+  .diagram { margin-bottom: 3rem; }
+  .diagram h2 { margin-bottom: 0.5rem; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .col { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 1rem; overflow: auto; }
+  .col h3 { margin: 0 0 0.5rem; font-size: 0.9rem; color: #666; }
+  .col svg { max-width: 100%; height: auto; border: 1px solid #e0e0e0; background: #fafafa; }
+  .source { background: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; padding: 1rem;
+            overflow: auto; font-family: monospace; font-size: 0.82rem; line-height: 1.4; margin-bottom: 1rem; }
+  .error { background: #fee; border-color: #c00; color: #900; padding: 1rem; border-radius: 4px;
+           white-space: pre-wrap; font-family: monospace; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<h1>C4 Diagram Comparison: mmdg vs mermaid.js</h1>
+<p><a href="index.html">&larr; Home</a> | <a href="ecosystem.html">Ecosystem</a></p>
+
+<div class="diagram">
+  <h2>container_01_title.mmd</h2>
+  <pre class="source">C4Container
+    title Model Bank - Container Diagram
+</pre>
+  <div class="grid">
+    <div class="col">
+      <h3>mmdg (Go)</h3>
+      <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="my-svg" viewBox="0 0 760 108" style="max-width: 760px; background-color: #FFFFFF;" role="graphics-document document" aria-roledescription="c4">
+<style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .person{stroke:hsl(240, 60%, 86.2745098039%);fill:#ECECFF;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g/>
+<defs><symbol id="computer" width="24" height="24"><path transform="scale(.5)" d="M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"/></symbol></defs>
+<defs><symbol id="database" fill-rule="evenodd" clip-rule="evenodd"><path transform="scale(.5)" d="M12 1C6 1 1 3.2 1 6v12c0 2.8 5 5 11 5s11-2.2 11-5V6c0-2.8-5-5-11-5zm0 2c5 0 9 1.6 9 3s-4 3-9 3-9-1.6-9-3s4-3 9-3zm0 18c-5 0-9-1.6-9-3v-2c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3zm0-6c-5 0-9-1.6-9-3V10c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3z"/></symbol></defs>
+<defs><symbol id="clock" width="24" height="24"><path transform="scale(.5)" d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2zm0-2C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 12.5c.2 0 .2.3 0 .4-1.9.3-6 .9-6.5.9-.7 0-1.3-.6-1.3-1.3 0-.5.8-5.4 1.1-7.4l1 6.2 5.7 1.2z"/></symbol></defs>
+<defs><marker id="arrowhead" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs>
+<defs><marker id="arrowend" refX="1" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z"/></marker></defs>
+<defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs>
+<defs><marker id="filled-head" refX="18" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs>
+<rect x="0" y="0" width="760" height="108" fill="#FFFFFF"/>
+<g></g></svg>
+
+    </div>
+    <div class="col">
+      <h3>mermaid.js (browser)</h3>
+      <pre class="mermaid">C4Container
+    title Model Bank - Container Diagram
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="diagram">
+  <h2>container_02_person.mmd</h2>
+  <pre class="source">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+</pre>
+  <div class="grid">
+    <div class="col">
+      <h3>mmdg (Go)</h3>
+      <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="my-svg" viewBox="0 -70 516 443" style="max-width: 516px; background-color: #FFFFFF;" role="graphics-document document" aria-roledescription="c4">
+<style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .person{stroke:hsl(240, 60%, 86.2745098039%);fill:#ECECFF;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g/>
+<defs><symbol id="computer" width="24" height="24"><path transform="scale(.5)" d="M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"/></symbol></defs>
+<defs><symbol id="database" fill-rule="evenodd" clip-rule="evenodd"><path transform="scale(.5)" d="M12 1C6 1 1 3.2 1 6v12c0 2.8 5 5 11 5s11-2.2 11-5V6c0-2.8-5-5-11-5zm0 2c5 0 9 1.6 9 3s-4 3-9 3-9-1.6-9-3s4-3 9-3zm0 18c-5 0-9-1.6-9-3v-2c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3zm0-6c-5 0-9-1.6-9-3V10c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3z"/></symbol></defs>
+<defs><symbol id="clock" width="24" height="24"><path transform="scale(.5)" d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2zm0-2C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 12.5c.2 0 .2.3 0 .4-1.9.3-6 .9-6.5.9-.7 0-1.3-.6-1.3-1.3 0-.5.8-5.4 1.1-7.4l1 6.2 5.7 1.2z"/></symbol></defs>
+<defs><marker id="arrowhead" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs>
+<defs><marker id="arrowend" refX="1" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z"/></marker></defs>
+<defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs>
+<defs><marker id="filled-head" refX="18" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs>
+<rect x="0" y="-70" width="516" height="443" fill="#FFFFFF"/>
+<g class="person-man"><rect x="150" y="168" fill="#08427B" stroke="#073B6F" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="222" y="188">&lt;&lt;person&gt;&gt;</text><image width="48" height="48" x="234" y="198" xlink:href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='4' r='3' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3Cpath d='M3 15c0-2.8 2.2-5 5-5s5 2.2 5 5' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3C/svg%3E"/><text x="258" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Bank Customer</tspan></text></g><g></g><text x="322.8" y="20">Model Bank - Container Diagram</text></svg>
+
+    </div>
+    <div class="col">
+      <h3>mermaid.js (browser)</h3>
+      <pre class="mermaid">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="diagram">
+  <h2>container_03_ext.mmd</h2>
+  <pre class="source">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+</pre>
+  <div class="grid">
+    <div class="col">
+      <h3>mmdg (Go)</h3>
+      <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="my-svg" viewBox="0 -70 516 508" style="max-width: 516px; background-color: #FFFFFF;" role="graphics-document document" aria-roledescription="c4">
+<style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .person{stroke:hsl(240, 60%, 86.2745098039%);fill:#ECECFF;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g/>
+<defs><symbol id="computer" width="24" height="24"><path transform="scale(.5)" d="M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"/></symbol></defs>
+<defs><symbol id="database" fill-rule="evenodd" clip-rule="evenodd"><path transform="scale(.5)" d="M12 1C6 1 1 3.2 1 6v12c0 2.8 5 5 11 5s11-2.2 11-5V6c0-2.8-5-5-11-5zm0 2c5 0 9 1.6 9 3s-4 3-9 3-9-1.6-9-3s4-3 9-3zm0 18c-5 0-9-1.6-9-3v-2c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3zm0-6c-5 0-9-1.6-9-3V10c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3z"/></symbol></defs>
+<defs><symbol id="clock" width="24" height="24"><path transform="scale(.5)" d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2zm0-2C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 12.5c.2 0 .2.3 0 .4-1.9.3-6 .9-6.5.9-.7 0-1.3-.6-1.3-1.3 0-.5.8-5.4 1.1-7.4l1 6.2 5.7 1.2z"/></symbol></defs>
+<defs><marker id="arrowhead" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs>
+<defs><marker id="arrowend" refX="1" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z"/></marker></defs>
+<defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs>
+<defs><marker id="filled-head" refX="18" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs>
+<rect x="0" y="-70" width="516" height="508" fill="#FFFFFF"/>
+<g class="person-man"><rect x="150" y="168" fill="#08427B" stroke="#073B6F" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="222" y="188">&lt;&lt;person&gt;&gt;</text><image width="48" height="48" x="234" y="198" xlink:href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='4' r='3' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3Cpath d='M3 15c0-2.8 2.2-5 5-5s5 2.2 5 5' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3C/svg%3E"/><text x="258" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Bank Customer</tspan></text></g><g class="person-man"><rect x="150" y="258" fill="#999999" stroke="#8A8A8A" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136.8" x="189.6" y="278">&lt;&lt;external_system&gt;&gt;</text><text x="258" y="344" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">mock-fps</tspan></text></g><g></g><text x="322.8" y="20">Model Bank - Container Diagram</text></svg>
+
+    </div>
+    <div class="col">
+      <h3>mermaid.js (browser)</h3>
+      <pre class="mermaid">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="diagram">
+  <h2>container_04_boundary_one.mmd</h2>
+  <pre class="source">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Boundary(bank, &#34;Model Bank&#34;) {
+        Container(web, &#34;Web UI&#34;, &#34;Go WASM &#43; Bulma&#34;, &#34;Browser-based dashboard&#34;)
+    }
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+</pre>
+  <div class="grid">
+    <div class="col">
+      <h3>mmdg (Go)</h3>
+      <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="my-svg" viewBox="0 -70 516 598" style="max-width: 516px; background-color: #FFFFFF;" role="graphics-document document" aria-roledescription="c4">
+<style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .person{stroke:hsl(240, 60%, 86.2745098039%);fill:#ECECFF;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g/>
+<defs><symbol id="computer" width="24" height="24"><path transform="scale(.5)" d="M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"/></symbol></defs>
+<defs><symbol id="database" fill-rule="evenodd" clip-rule="evenodd"><path transform="scale(.5)" d="M12 1C6 1 1 3.2 1 6v12c0 2.8 5 5 11 5s11-2.2 11-5V6c0-2.8-5-5-11-5zm0 2c5 0 9 1.6 9 3s-4 3-9 3-9-1.6-9-3s4-3 9-3zm0 18c-5 0-9-1.6-9-3v-2c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3zm0-6c-5 0-9-1.6-9-3V10c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3z"/></symbol></defs>
+<defs><symbol id="clock" width="24" height="24"><path transform="scale(.5)" d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2zm0-2C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 12.5c.2 0 .2.3 0 .4-1.9.3-6 .9-6.5.9-.7 0-1.3-.6-1.3-1.3 0-.5.8-5.4 1.1-7.4l1 6.2 5.7 1.2z"/></symbol></defs>
+<defs><marker id="arrowhead" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs>
+<defs><marker id="arrowend" refX="1" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z"/></marker></defs>
+<defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs>
+<defs><marker id="filled-head" refX="18" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs>
+<rect x="0" y="-70" width="516" height="598" fill="#FFFFFF"/>
+<g class="person-man"><rect x="150" y="168" fill="#08427B" stroke="#073B6F" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="222" y="188">&lt;&lt;person&gt;&gt;</text><image width="48" height="48" x="234" y="198" xlink:href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='4' r='3' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3Cpath d='M3 15c0-2.8 2.2-5 5-5s5 2.2 5 5' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3C/svg%3E"/><text x="258" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Bank Customer</tspan></text></g><g class="person-man"><rect x="150" y="258" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="278">&lt;&lt;container&gt;&gt;</text><text x="258" y="344" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Web UI</tspan></text></g><g class="person-man"><rect x="150" y="348" fill="#999999" stroke="#8A8A8A" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136.8" x="189.6" y="368">&lt;&lt;external_system&gt;&gt;</text><text x="258" y="434" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">mock-fps</tspan></text></g><g></g><text x="322.8" y="20">Model Bank - Container Diagram</text></svg>
+
+    </div>
+    <div class="col">
+      <h3>mermaid.js (browser)</h3>
+      <pre class="mermaid">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Boundary(bank, &#34;Model Bank&#34;) {
+        Container(web, &#34;Web UI&#34;, &#34;Go WASM &#43; Bulma&#34;, &#34;Browser-based dashboard&#34;)
+    }
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="diagram">
+  <h2>container_05_containers.mmd</h2>
+  <pre class="source">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Boundary(bank, &#34;Model Bank&#34;) {
+        Container(web, &#34;Web UI&#34;, &#34;Go WASM &#43; Bulma&#34;, &#34;Browser-based dashboard&#34;)
+        Container(server, &#34;Server&#34;, &#34;Go &#43; lofigui&#34;, &#34;HTTP server with SSR&#34;)
+        Container(sim, &#34;Simulation Engine&#34;, &#34;Go&#34;, &#34;Account lifecycle, interest accrual&#34;)
+        Container(payments, &#34;Payment Sim&#34;, &#34;Go&#34;, &#34;Payment generation and processing&#34;)
+    }
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+</pre>
+  <div class="grid">
+    <div class="col">
+      <h3>mmdg (Go)</h3>
+      <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="my-svg" viewBox="0 -70 516 868" style="max-width: 516px; background-color: #FFFFFF;" role="graphics-document document" aria-roledescription="c4">
+<style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .person{stroke:hsl(240, 60%, 86.2745098039%);fill:#ECECFF;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g/>
+<defs><symbol id="computer" width="24" height="24"><path transform="scale(.5)" d="M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"/></symbol></defs>
+<defs><symbol id="database" fill-rule="evenodd" clip-rule="evenodd"><path transform="scale(.5)" d="M12 1C6 1 1 3.2 1 6v12c0 2.8 5 5 11 5s11-2.2 11-5V6c0-2.8-5-5-11-5zm0 2c5 0 9 1.6 9 3s-4 3-9 3-9-1.6-9-3s4-3 9-3zm0 18c-5 0-9-1.6-9-3v-2c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3zm0-6c-5 0-9-1.6-9-3V10c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3z"/></symbol></defs>
+<defs><symbol id="clock" width="24" height="24"><path transform="scale(.5)" d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2zm0-2C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 12.5c.2 0 .2.3 0 .4-1.9.3-6 .9-6.5.9-.7 0-1.3-.6-1.3-1.3 0-.5.8-5.4 1.1-7.4l1 6.2 5.7 1.2z"/></symbol></defs>
+<defs><marker id="arrowhead" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs>
+<defs><marker id="arrowend" refX="1" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z"/></marker></defs>
+<defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs>
+<defs><marker id="filled-head" refX="18" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs>
+<rect x="0" y="-70" width="516" height="868" fill="#FFFFFF"/>
+<g class="person-man"><rect x="150" y="168" fill="#08427B" stroke="#073B6F" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="222" y="188">&lt;&lt;person&gt;&gt;</text><image width="48" height="48" x="234" y="198" xlink:href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='4' r='3' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3Cpath d='M3 15c0-2.8 2.2-5 5-5s5 2.2 5 5' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3C/svg%3E"/><text x="258" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Bank Customer</tspan></text></g><g class="person-man"><rect x="150" y="258" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="278">&lt;&lt;container&gt;&gt;</text><text x="258" y="344" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Web UI</tspan></text></g><g class="person-man"><rect x="150" y="348" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="368">&lt;&lt;container&gt;&gt;</text><text x="258" y="434" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Server</tspan></text></g><g class="person-man"><rect x="150" y="438" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="458">&lt;&lt;container&gt;&gt;</text><text x="258" y="524" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Simulation Engine</tspan></text></g><g class="person-man"><rect x="150" y="528" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="548">&lt;&lt;container&gt;&gt;</text><text x="258" y="614" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Payment Sim</tspan></text></g><g class="person-man"><rect x="150" y="618" fill="#999999" stroke="#8A8A8A" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136.8" x="189.6" y="638">&lt;&lt;external_system&gt;&gt;</text><text x="258" y="704" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">mock-fps</tspan></text></g><g></g><text x="322.8" y="20">Model Bank - Container Diagram</text></svg>
+
+    </div>
+    <div class="col">
+      <h3>mermaid.js (browser)</h3>
+      <pre class="mermaid">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Boundary(bank, &#34;Model Bank&#34;) {
+        Container(web, &#34;Web UI&#34;, &#34;Go WASM &#43; Bulma&#34;, &#34;Browser-based dashboard&#34;)
+        Container(server, &#34;Server&#34;, &#34;Go &#43; lofigui&#34;, &#34;HTTP server with SSR&#34;)
+        Container(sim, &#34;Simulation Engine&#34;, &#34;Go&#34;, &#34;Account lifecycle, interest accrual&#34;)
+        Container(payments, &#34;Payment Sim&#34;, &#34;Go&#34;, &#34;Payment generation and processing&#34;)
+    }
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="diagram">
+  <h2>container_06_db.mmd</h2>
+  <pre class="source">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Boundary(bank, &#34;Model Bank&#34;) {
+        Container(web, &#34;Web UI&#34;, &#34;Go WASM &#43; Bulma&#34;, &#34;Browser-based dashboard&#34;)
+        Container(server, &#34;Server&#34;, &#34;Go &#43; lofigui&#34;, &#34;HTTP server with SSR&#34;)
+        Container(sim, &#34;Simulation Engine&#34;, &#34;Go&#34;, &#34;Account lifecycle, interest accrual&#34;)
+        Container(payments, &#34;Payment Sim&#34;, &#34;Go&#34;, &#34;Payment generation and processing&#34;)
+        ContainerDb(ledger, &#34;Ledger&#34;, &#34;go-luca&#34;, &#34;Double-entry accounting&#34;)
+    }
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+</pre>
+  <div class="grid">
+    <div class="col">
+      <h3>mmdg (Go)</h3>
+      <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="my-svg" viewBox="0 -70 516 868" style="max-width: 516px; background-color: #FFFFFF;" role="graphics-document document" aria-roledescription="c4">
+<style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .person{stroke:hsl(240, 60%, 86.2745098039%);fill:#ECECFF;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g/>
+<defs><symbol id="computer" width="24" height="24"><path transform="scale(.5)" d="M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"/></symbol></defs>
+<defs><symbol id="database" fill-rule="evenodd" clip-rule="evenodd"><path transform="scale(.5)" d="M12 1C6 1 1 3.2 1 6v12c0 2.8 5 5 11 5s11-2.2 11-5V6c0-2.8-5-5-11-5zm0 2c5 0 9 1.6 9 3s-4 3-9 3-9-1.6-9-3s4-3 9-3zm0 18c-5 0-9-1.6-9-3v-2c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3zm0-6c-5 0-9-1.6-9-3V10c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3z"/></symbol></defs>
+<defs><symbol id="clock" width="24" height="24"><path transform="scale(.5)" d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2zm0-2C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 12.5c.2 0 .2.3 0 .4-1.9.3-6 .9-6.5.9-.7 0-1.3-.6-1.3-1.3 0-.5.8-5.4 1.1-7.4l1 6.2 5.7 1.2z"/></symbol></defs>
+<defs><marker id="arrowhead" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs>
+<defs><marker id="arrowend" refX="1" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z"/></marker></defs>
+<defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs>
+<defs><marker id="filled-head" refX="18" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs>
+<rect x="0" y="-70" width="516" height="868" fill="#FFFFFF"/>
+<g class="person-man"><rect x="150" y="168" fill="#08427B" stroke="#073B6F" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="222" y="188">&lt;&lt;person&gt;&gt;</text><image width="48" height="48" x="234" y="198" xlink:href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='4' r='3' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3Cpath d='M3 15c0-2.8 2.2-5 5-5s5 2.2 5 5' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3C/svg%3E"/><text x="258" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Bank Customer</tspan></text></g><g class="person-man"><rect x="150" y="258" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="278">&lt;&lt;container&gt;&gt;</text><text x="258" y="344" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Web UI</tspan></text></g><g class="person-man"><rect x="150" y="348" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="368">&lt;&lt;container&gt;&gt;</text><text x="258" y="434" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Server</tspan></text></g><g class="person-man"><rect x="150" y="438" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="458">&lt;&lt;container&gt;&gt;</text><text x="258" y="524" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Simulation Engine</tspan></text></g><g class="person-man"><rect x="150" y="528" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="548">&lt;&lt;container&gt;&gt;</text><text x="258" y="614" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Payment Sim</tspan></text></g><g class="person-man"><rect x="150" y="618" fill="#999999" stroke="#8A8A8A" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136.8" x="189.6" y="638">&lt;&lt;external_system&gt;&gt;</text><text x="258" y="704" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">mock-fps</tspan></text></g><g></g><text x="322.8" y="20">Model Bank - Container Diagram</text></svg>
+
+    </div>
+    <div class="col">
+      <h3>mermaid.js (browser)</h3>
+      <pre class="mermaid">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Boundary(bank, &#34;Model Bank&#34;) {
+        Container(web, &#34;Web UI&#34;, &#34;Go WASM &#43; Bulma&#34;, &#34;Browser-based dashboard&#34;)
+        Container(server, &#34;Server&#34;, &#34;Go &#43; lofigui&#34;, &#34;HTTP server with SSR&#34;)
+        Container(sim, &#34;Simulation Engine&#34;, &#34;Go&#34;, &#34;Account lifecycle, interest accrual&#34;)
+        Container(payments, &#34;Payment Sim&#34;, &#34;Go&#34;, &#34;Payment generation and processing&#34;)
+        ContainerDb(ledger, &#34;Ledger&#34;, &#34;go-luca&#34;, &#34;Double-entry accounting&#34;)
+    }
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="diagram">
+  <h2>container_07_rels.mmd</h2>
+  <pre class="source">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Boundary(bank, &#34;Model Bank&#34;) {
+        Container(web, &#34;Web UI&#34;, &#34;Go WASM &#43; Bulma&#34;, &#34;Browser-based dashboard&#34;)
+        Container(server, &#34;Server&#34;, &#34;Go &#43; lofigui&#34;, &#34;HTTP server with SSR&#34;)
+        Container(sim, &#34;Simulation Engine&#34;, &#34;Go&#34;, &#34;Account lifecycle, interest accrual&#34;)
+        Container(payments, &#34;Payment Sim&#34;, &#34;Go&#34;, &#34;Payment generation and processing&#34;)
+        ContainerDb(ledger, &#34;Ledger&#34;, &#34;go-luca&#34;, &#34;Double-entry accounting&#34;)
+    }
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+
+    Rel(customer, web, &#34;Uses&#34;, &#34;HTTPS&#34;)
+    Rel(customer, server, &#34;Uses&#34;, &#34;HTTPS&#34;)
+    Rel(web, sim, &#34;Calls&#34;, &#34;WASM&#34;)
+    Rel(server, sim, &#34;Calls&#34;, &#34;Go API&#34;)
+    Rel(sim, ledger, &#34;Records transactions&#34;)
+    Rel(payments, fps, &#34;Sends payments&#34;, &#34;HTTP&#34;)
+    Rel(payments, ledger, &#34;Records movements&#34;)
+</pre>
+  <div class="grid">
+    <div class="col">
+      <h3>mmdg (Go)</h3>
+      <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="my-svg" viewBox="0 -70 1464 598" style="max-width: 1464px; background-color: #FFFFFF;" role="graphics-document document" aria-roledescription="c4">
+<style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .person{stroke:hsl(240, 60%, 86.2745098039%);fill:#ECECFF;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g/>
+<defs><symbol id="computer" width="24" height="24"><path transform="scale(.5)" d="M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"/></symbol></defs>
+<defs><symbol id="database" fill-rule="evenodd" clip-rule="evenodd"><path transform="scale(.5)" d="M12 1C6 1 1 3.2 1 6v12c0 2.8 5 5 11 5s11-2.2 11-5V6c0-2.8-5-5-11-5zm0 2c5 0 9 1.6 9 3s-4 3-9 3-9-1.6-9-3s4-3 9-3zm0 18c-5 0-9-1.6-9-3v-2c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3zm0-6c-5 0-9-1.6-9-3V10c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3z"/></symbol></defs>
+<defs><symbol id="clock" width="24" height="24"><path transform="scale(.5)" d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2zm0-2C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 12.5c.2 0 .2.3 0 .4-1.9.3-6 .9-6.5.9-.7 0-1.3-.6-1.3-1.3 0-.5.8-5.4 1.1-7.4l1 6.2 5.7 1.2z"/></symbol></defs>
+<defs><marker id="arrowhead" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs>
+<defs><marker id="arrowend" refX="1" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z"/></marker></defs>
+<defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs>
+<defs><marker id="filled-head" refX="18" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs>
+<rect x="0" y="-70" width="1464" height="598" fill="#FFFFFF"/>
+<g class="person-man"><rect x="150" y="168" fill="#08427B" stroke="#073B6F" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="222" y="188">&lt;&lt;person&gt;&gt;</text><image width="48" height="48" x="234" y="198" xlink:href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='4' r='3' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3Cpath d='M3 15c0-2.8 2.2-5 5-5s5 2.2 5 5' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3C/svg%3E"/><text x="258" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Bank Customer</tspan></text></g><g class="person-man"><rect x="150" y="258" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="211.2" y="278">&lt;&lt;container&gt;&gt;</text><text x="258" y="344" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Payment Sim</tspan></text></g><g class="person-man"><rect x="466" y="168" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="527.2" y="188">&lt;&lt;container&gt;&gt;</text><text x="574" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Web UI</tspan></text></g><g class="person-man"><rect x="466" y="258" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="527.2" y="278">&lt;&lt;container&gt;&gt;</text><text x="574" y="344" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Server</tspan></text></g><g class="person-man"><rect x="466" y="348" fill="#999999" stroke="#8A8A8A" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136.8" x="505.6" y="368">&lt;&lt;external_system&gt;&gt;</text><text x="574" y="434" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">mock-fps</tspan></text></g><g class="person-man"><rect x="782" y="168" fill="#1168BD" stroke="#3C7FC0" width="216" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93.6" x="843.2" y="188">&lt;&lt;container&gt;&gt;</text><text x="890" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Simulation Engine</tspan></text></g><g class="person-man"><rect x="1098" y="168" fill="#1168BD" stroke="#3C7FC0" width="216" height="60" rx="2.5" ry="2.5" stroke-width="0.5"/><text x="1206" y="206" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">ledger</tspan></text></g><g><line x1="366" y1="227.85" x2="466" y2="218.4" stroke-width="1" stroke="#444444" marker-end="url(#arrowhead)" style="fill: none;"/><text x="416" y="223.12" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Uses
+[HTTPS]</tspan></text><line x1="366" y1="227.85" x2="466" y2="308.4" stroke-width="1" stroke="#444444" marker-end="url(#arrowhead)" style="fill: none;"/><text x="416" y="268.12" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Uses
+[HTTPS]</tspan></text><line x1="682" y1="227.85" x2="782" y2="218.4" stroke-width="1" stroke="#444444" marker-end="url(#arrowhead)" style="fill: none;"/><text x="732" y="223.12" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Calls
+[WASM]</tspan></text><line x1="682" y1="317.85" x2="782" y2="218.4" stroke-width="1" stroke="#444444" marker-end="url(#arrowhead)" style="fill: none;"/><text x="732" y="268.12" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Calls
+[Go API]</tspan></text><line x1="998" y1="227.85" x2="1098" y2="196.8" stroke-width="1" stroke="#444444" marker-end="url(#arrowhead)" style="fill: none;"/><text x="1048" y="212.32" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Records transactions</tspan></text><line x1="366" y1="317.85" x2="466" y2="398.4" stroke-width="1" stroke="#444444" marker-end="url(#arrowhead)" style="fill: none;"/><text x="416" y="358.12" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Sends payments
+[HTTP]</tspan></text><path fill="none" stroke-width="1" stroke="#444444" d="M366,317.85 Q622.2,238.12 1098,196.8" marker-end="url(#arrowhead)"/><text x="732" y="238.12" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Records movements</tspan></text></g><text x="322.8" y="20">Model Bank - Container Diagram</text></svg>
+
+    </div>
+    <div class="col">
+      <h3>mermaid.js (browser)</h3>
+      <pre class="mermaid">C4Container
+    title Model Bank - Container Diagram
+
+    Person(customer, &#34;Bank Customer&#34;)
+
+    System_Boundary(bank, &#34;Model Bank&#34;) {
+        Container(web, &#34;Web UI&#34;, &#34;Go WASM &#43; Bulma&#34;, &#34;Browser-based dashboard&#34;)
+        Container(server, &#34;Server&#34;, &#34;Go &#43; lofigui&#34;, &#34;HTTP server with SSR&#34;)
+        Container(sim, &#34;Simulation Engine&#34;, &#34;Go&#34;, &#34;Account lifecycle, interest accrual&#34;)
+        Container(payments, &#34;Payment Sim&#34;, &#34;Go&#34;, &#34;Payment generation and processing&#34;)
+        ContainerDb(ledger, &#34;Ledger&#34;, &#34;go-luca&#34;, &#34;Double-entry accounting&#34;)
+    }
+
+    System_Ext(fps, &#34;mock-fps&#34;, &#34;FPS simulator&#34;)
+
+    Rel(customer, web, &#34;Uses&#34;, &#34;HTTPS&#34;)
+    Rel(customer, server, &#34;Uses&#34;, &#34;HTTPS&#34;)
+    Rel(web, sim, &#34;Calls&#34;, &#34;WASM&#34;)
+    Rel(server, sim, &#34;Calls&#34;, &#34;Go API&#34;)
+    Rel(sim, ledger, &#34;Records transactions&#34;)
+    Rel(payments, fps, &#34;Sends payments&#34;, &#34;HTTP&#34;)
+    Rel(payments, ledger, &#34;Records movements&#34;)
+</pre>
+    </div>
+  </div>
+</div>
+
+<div class="diagram">
+  <h2>system_context.mmd</h2>
+  <pre class="source">C4Context
+    title Model Bank - System Context
+
+    Person(customer, &#34;Bank Customer&#34;, &#34;A customer of the model bank&#34;)
+    System(modelBank, &#34;Model Bank&#34;, &#34;Simulates core banking: accounts, interest, payments&#34;)
+    System_Ext(fps, &#34;Faster Payments&#34;, &#34;UK Faster Payments Service (mock-fps)&#34;)
+
+    Rel(customer, modelBank, &#34;Views accounts, sends payments&#34;)
+    Rel(modelBank, fps, &#34;Sends/receives payments&#34;)
+</pre>
+  <div class="grid">
+    <div class="col">
+      <h3>mmdg (Go)</h3>
+      <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="my-svg" viewBox="0 -70 1662.4 443" style="max-width: 1662.4px; background-color: #FFFFFF;" role="graphics-document document" aria-roledescription="c4">
+<style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .person{stroke:hsl(240, 60%, 86.2745098039%);fill:#ECECFF;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g/>
+<defs><symbol id="computer" width="24" height="24"><path transform="scale(.5)" d="M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"/></symbol></defs>
+<defs><symbol id="database" fill-rule="evenodd" clip-rule="evenodd"><path transform="scale(.5)" d="M12 1C6 1 1 3.2 1 6v12c0 2.8 5 5 11 5s11-2.2 11-5V6c0-2.8-5-5-11-5zm0 2c5 0 9 1.6 9 3s-4 3-9 3-9-1.6-9-3s4-3 9-3zm0 18c-5 0-9-1.6-9-3v-2c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3zm0-6c-5 0-9-1.6-9-3V10c2 1.5 5.7 2.4 9 2.4s7-0.9 9-2.4v2c0 1.4-4 3-9 3z"/></symbol></defs>
+<defs><symbol id="clock" width="24" height="24"><path transform="scale(.5)" d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2zm0-2C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.8 12.5c.2 0 .2.3 0 .4-1.9.3-6 .9-6.5.9-.7 0-1.3-.6-1.3-1.3 0-.5.8-5.4 1.1-7.4l1 6.2 5.7 1.2z"/></symbol></defs>
+<defs><marker id="arrowhead" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs>
+<defs><marker id="arrowend" refX="1" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z"/></marker></defs>
+<defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs>
+<defs><marker id="filled-head" refX="18" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs>
+<rect x="0" y="-70" width="1662.4" height="443" fill="#FFFFFF"/>
+<g class="person-man"><rect x="150" y="168" fill="#08427B" stroke="#073B6F" width="257.6" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="242.8" y="188">&lt;&lt;person&gt;&gt;</text><image width="48" height="48" x="254.8" y="198" xlink:href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='4' r='3' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3Cpath d='M3 15c0-2.8 2.2-5 5-5s5 2.2 5 5' fill='none' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3C/svg%3E"/><text x="278.8" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Bank Customer</tspan></text></g><g class="person-man"><rect x="670" y="168" fill="#1168BD" stroke="#3C7FC0" width="420" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="844" y="188">&lt;&lt;system&gt;&gt;</text><text x="880" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Model Bank</tspan></text></g><g class="person-man"><rect x="1190" y="168" fill="#999999" stroke="#8A8A8A" width="322.4" height="105" rx="2.5" ry="2.5" stroke-width="0.5"/><text fill="#FFFFFF" font-family="&quot;Open Sans&quot;, sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="136.8" x="1282.8" y="188">&lt;&lt;external_system&gt;&gt;</text><text x="1351.2" y="254" dominant-baseline="middle" fill="#FFFFFF" style="text-anchor: middle; font-size: 16px; font-weight: bold; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Faster Payments</tspan></text></g><g><line x1="407.6" y1="227.85" x2="670" y2="218.4" stroke-width="1" stroke="#444444" marker-end="url(#arrowhead)" style="fill: none;"/><text x="538.8" y="223.12" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Views accounts, sends payments</tspan></text><path fill="none" stroke-width="1" stroke="#444444" d="M1090,227.85 Q1125,226.24 1190,218.4" marker-end="url(#arrowhead)"/><text x="1140" y="226.24" dominant-baseline="middle" fill="#444444" style="text-anchor: middle; font-size: 12px; font-weight: normal; font-family: &quot;Open Sans&quot;, sans-serif;"><tspan dy="0" alignment-baseline="mathematical">Sends/receives payments</tspan></text></g><text x="486" y="20">Model Bank - System Context</text></svg>
+
+    </div>
+    <div class="col">
+      <h3>mermaid.js (browser)</h3>
+      <pre class="mermaid">C4Context
+    title Model Bank - System Context
+
+    Person(customer, &#34;Bank Customer&#34;, &#34;A customer of the model bank&#34;)
+    System(modelBank, &#34;Model Bank&#34;, &#34;Simulates core banking: accounts, interest, payments&#34;)
+    System_Ext(fps, &#34;Faster Payments&#34;, &#34;UK Faster Payments Service (mock-fps)&#34;)
+
+    Rel(customer, modelBank, &#34;Views accounts, sends payments&#34;)
+    Rel(modelBank, fps, &#34;Sends/receives payments&#34;)
+</pre>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+</script>
+</body>
+</html>
