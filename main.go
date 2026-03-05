@@ -26,6 +26,7 @@ type Config struct {
 	Title      string   `yaml:"title"`
 	Commentary string   `yaml:"commentary"`
 	MainPath   string   `yaml:"main_path"`
+	Repo       string   `yaml:"repo"`
 	Branches   []Branch `yaml:"branches"`
 }
 
@@ -104,6 +105,71 @@ func renderWith(binPath string, src []byte) (string, error) {
 	return string(out), nil
 }
 
+func execInDir(dir, name string, args ...string) (string, error) {
+	cmd := exec.Command(name, args...)
+	cmd.Dir = dir
+	out, err := cmd.CombinedOutput()
+	if err != nil {
+		return "", fmt.Errorf("%s %v: %w\n%s", name, args, err, out)
+	}
+	return string(out), nil
+}
+
+// buildBranches builds a temp binary for each branch that lacks an explicit path.
+// Returns a cleanup function to remove the temp files.
+func buildBranches(cfg *Config) func() {
+	if cfg.Repo == "" {
+		return func() {}
+	}
+	repoDir := expandPath(cfg.Repo)
+
+	origBranch, err := execInDir(repoDir, "git", "rev-parse", "--abbrev-ref", "HEAD")
+	if err != nil {
+		log.Fatalf("get current branch in %s: %v", repoDir, err)
+	}
+
+	var tempFiles []string
+	for i := range cfg.Branches {
+		b := &cfg.Branches[i]
+		if b.Path != "" {
+			continue
+		}
+
+		if _, err := execInDir(repoDir, "git", "checkout", b.Name); err != nil {
+			log.Printf("checkout %s: %v", b.Name, err)
+			continue
+		}
+
+		tmp, err := os.CreateTemp("", "mmdg-"+b.Name+"-*")
+		if err != nil {
+			log.Printf("temp file for %s: %v", b.Name, err)
+			continue
+		}
+		tmp.Close()
+
+		if _, err := execInDir(repoDir, "go", "build", "-o", tmp.Name(), "./cmd/mmdg"); err != nil {
+			log.Printf("build %s: %v", b.Name, err)
+			os.Remove(tmp.Name())
+			continue
+		}
+
+		b.Path = tmp.Name()
+		tempFiles = append(tempFiles, tmp.Name())
+		log.Printf("built %s -> %s", b.Name, tmp.Name())
+	}
+
+	// Restore original branch
+	if _, err := execInDir(repoDir, "git", "checkout", strings.TrimSpace(origBranch)); err != nil {
+		log.Printf("restore branch %s: %v", strings.TrimSpace(origBranch), err)
+	}
+
+	return func() {
+		for _, f := range tempFiles {
+			os.Remove(f)
+		}
+	}
+}
+
 func loadDiagrams(dir string, cfg Config) []diagram {
 	files, err := filepath.Glob(filepath.Join(dir, "*.mmd"))
 	if err != nil {
@@ -131,7 +197,9 @@ func loadDiagrams(dir string, cfg Config) []diagram {
 		// Render with each branch binary
 		for _, b := range cfg.Branches {
 			br := BranchResult{Branch: b}
-			if svg, err := renderWith(b.Path, src); err != nil {
+			if b.Path == "" {
+				br.Err = "build failed (no binary)"
+			} else if svg, err := renderWith(b.Path, src); err != nil {
 				br.Err = err.Error()
 			} else {
 				br.SVG = template.HTML(svg)
@@ -180,7 +248,7 @@ var tmpl = template.Must(template.New("page").Parse(`<!DOCTYPE html>
 <dl class="branch-list">
 {{- range .Config.Branches}}
   <dt>{{.Name}}</dt>
-  <dd>{{.Description}} <code>{{.Path}}</code></dd>
+  <dd>{{.Description}}</dd>
 {{- end}}
 </dl>
 {{- end}}
@@ -228,6 +296,8 @@ func main() {
 	}
 
 	cfg := loadConfig("c4test.yml")
+	cleanup := buildBranches(&cfg)
+	defer cleanup()
 	diagrams := loadDiagrams(dir, cfg)
 	log.Printf("rendered %d diagrams", len(diagrams))
 

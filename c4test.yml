@@ -4,11 +4,10 @@ commentary: >
   of mermaid-go-renderer to track rendering improvements.
 
 main_path: ~/go/bin/mmdg
+repo: ~/nibble/mermaid-go-renderer
 
 branches:
   - name: c4-title-centering
-    path: ~/nibble/mermaid-go-renderer/branch-builds/c4-title-centering/mmdg
     description: Fixes title centering in C4 diagrams
   - name: c4-container-work
-    path: ~/nibble/mermaid-go-renderer/branch-builds/c4-container-work/mmdg
     description: Container layout improvements
