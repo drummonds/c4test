@@ -1,4 +1,4 @@
-module github.com/drummonds/c4test
+module codeberg.org/hum3/c4test
 
 go 1.25
 
